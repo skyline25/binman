@@ -1,0 +1,17 @@
+mixin additional-information(id)
+
+  .add
+    h2.add__header Объекты клиента
+    
+    p.add__text
+      span.add__description Всего объектов: 
+      
+      span.add__quantity(id=`${id}-quantity`)
+
+    .add__object-list(id=`${id}-container`)
+      .add__object.add__object_header Объект
+
+    .add__controls
+      .add__button.add__button_type_to-card Перейти в карточку
+
+      .add__button.add__button_type_hide Скрыть детали

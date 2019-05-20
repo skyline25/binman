@@ -1,0 +1,58 @@
+extends pug/base
+
+include pug/mixins/row
+include pug/mixins/cells
+include pug/mixins/cell-name
+include pug/mixins/cell-contract
+include pug/mixins/cell-object
+include pug/mixins/cell-params
+include pug/mixins/cell-geozone
+include pug/mixins/cell-more
+include pug/mixins/additional-information
+
+block content
+  header.header
+    img(
+      src=require('./resources/img/logo.png'), 
+      alt="Лого"
+    ).header__logo
+  
+  aside.aside
+    .aside__button
+
+  section.content
+    h1.content__header Ваши клиенты
+
+    p.content__text
+      span.content__description Всего погрузок: 
+      span.content__quantity 2020
+
+    - var data = require('./resources/json/data.json')
+    
+    .table
+      .table__content
+        +row(
+          {
+            type: 'header',
+            headers: data.header
+          }
+        )
+
+        each org in data.organizations
+          +row(
+            {
+              type: 'organization',
+              id: org.id,
+              property: org.property,
+              status: org.status,
+              title: org.name,
+              INN: org.inn,
+              OGRN: org.ogrn,
+              quantity: org.object,
+              price: org.money,
+              square: org.volume,
+              geozone: org.geozone,
+              container: org.containers,
+            },
+            org.contracts
+          )

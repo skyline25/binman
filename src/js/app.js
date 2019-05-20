@@ -1,0 +1,1 @@
+import './_on-table-click'

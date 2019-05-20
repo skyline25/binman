@@ -1,0 +1,31 @@
+mixin cell-contract(contracts)
+
+  if contracts.length < 1
+    .cell.cell_name_contract
+      .cell__content
+        .cell-button.cell-button_type_add
+          .cell-button__icon
+
+          .cell-button__text=`С клиентом нет заключенных договоров`
+          
+          .cell-button__action='Заключить договор'
+
+  else if contracts.length === 1
+    each contract in contracts
+      .cell.cell_name_contract
+        .cell__content
+          .cell-button.cell-button__icon.cell-button__icon_contract
+          .cell__info
+            p.cell-text.cell-text_type_title=contract.number
+          
+            p.cell-text=contract.type
+  
+  else
+    .cell.cell_name_contract
+      .cell__content
+        .cell-button.cell-button_type_more
+          .cell-button__icon
+
+          .cell-button__text=`C клиентом заключено ${contracts.length} договора`
+          
+          .cell-button__action='Подробнее'

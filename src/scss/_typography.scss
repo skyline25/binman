@@ -1,0 +1,46 @@
+.header {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  color: $color-mine-shaft;
+  font-family: "DIN Pro";
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -0.96px;
+  line-height: 1;
+
+  &_type {
+    &_thin {
+      font-size: 40px;
+      letter-spacing: -0.8px;
+      line-height: 49px;
+    }
+  }
+}
+
+.text {
+  color: $color-mine-shaft;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+
+  &_type {
+    &_accent {
+      color: $color-tango;
+      font-family: "Roboto";
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}
+
+@media all and (max-width: $mobile){ 
+  .header {
+    font-size: 36px;
+    
+    &_type {
+      &_thin {
+        font-size: 32px;
+      }
+    }
+  }
+}

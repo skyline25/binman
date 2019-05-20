@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  max-width: $container-width-normal;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  &_width {
+    &_thin {
+      max-width: $container-width-thin;
+    }
+    
+    &_wide {
+      max-width: $container-width-wide;
+    }
+  }
+
+  &_grid {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  &_align {
+    &_center {
+      align-items: center;
+    }
+  }
+
+  &_justify {
+    &_center {
+      justify-content: center;
+    }
+  }
+
+  &_direction {
+    &_column {
+      flex-direction: column;
+    }
+  }
+
+  &_wrap {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,27 @@
+mixin row(row, contracts)
+  case row.type
+    when 'header'
+      .table__row.table__row-line
+        each val in row.headers
+          .cell.cell_type_head=val
+        
+        .cell.cell_type_head
+
+    when 'organization'
+    
+      case row.status
+        when 'normal'
+          .table__row.table__row_info.table__row_status_normal(id=row.id)
+            +cells(row, contracts)
+
+        when 'error'
+          .table__row.table__row_info.table__row_status_error(id=row.id)
+            +cells(row, contracts)
+
+        when 'mistake'
+          .table__row.table__row_info.table__row_status_mistake(id=row.id)
+            +cells(row, contracts)
+    
+    default
+      .table__row
+        .cell

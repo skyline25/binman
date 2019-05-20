@@ -1,0 +1,29 @@
+mixin cells(row, contracts)
+
+  if contracts.length < 1
+    .table__row-line
+      +cell-name(row.title, row.property, row.status, row.INN, row.OGRN)
+
+      +cell-contract(contracts)
+
+      +cell-more
+    
+    .table__row-line
+      +additional-information(row.id)
+
+  else
+    .table__row-line
+      +cell-name(row.title, row.property, row.status, row.INN, row.OGRN)
+
+      +cell-contract(contracts)
+
+      +cell-object(row.quantity)
+
+      +cell-params(row.price, row.square)
+
+      +cell-geozone(row.geozone, row.container)
+
+      +cell-more
+
+    .table__row-line
+      +additional-information(row.id)

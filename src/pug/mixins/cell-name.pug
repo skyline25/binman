@@ -1,0 +1,15 @@
+mixin cell-name(title, property, status, INN, OGRN)
+  
+  .cell.cell_name_name
+    .cell__content
+      case property
+        when 'entity'
+          .cell__button.cell__button_property.cell__button_property_entity
+
+        when 'individual'
+          .cell__button.cell__button_property.cell__button_property_individual
+      
+      .cell__info
+        p.cell-text.cell-text_type_title=title
+        p.cell-text=INN 
+        p.cell-text=OGRN
